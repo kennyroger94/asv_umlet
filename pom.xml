@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
@@ -28,6 +29,11 @@
 
 	<properties>
 		<tycho.version>1.2.0</tycho.version>
+		<sonar.tests>src/test</sonar.tests>
+		<sonar.host.url>http://localhost:9000</sonar.host.url>
+		<sonar.login>4d1cddb0af81ab6a9359f78e9921c39e000c82c2</sonar.login>
+		<sonar.language>java</sonar.language>
+		<sonar.scm.provider>git</sonar.scm.provider>
 
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -46,7 +52,8 @@
 		<module>umlet-eclipse-feature</module>
 		<module>umlet-eclipse-p2</module>
 		<module>umlet-gwt</module>
-	</modules>
+    <module>lifecycle-mapping</module>
+  </modules>
 
 	<dependencies>
 		<dependency>
@@ -107,6 +114,12 @@
 			</resource>
 		</resources>
 		<plugins>
+			<!-- Sonar -->
+			<plugin>
+			  <groupId>org.sonarsource.scanner.maven</groupId>
+			  <artifactId>sonar-maven-plugin</artifactId>
+			  <version>3.2</version>
+			</plugin>
 			<!-- use buildnumber-maven-plugin to create several versions of timestamp variables -->
 			<plugin>
 				<groupId>org.codehaus.mojo</groupId>
@@ -203,7 +216,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -218,7 +231,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore />
+										<ignore/>
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -231,7 +244,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -245,7 +258,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 								<pluginExecution>
@@ -258,7 +271,7 @@
 										</goals>
 									</pluginExecutionFilter>
 									<action>
-										<ignore></ignore>
+										<ignore/>
 									</action>
 								</pluginExecution>
 							</pluginExecutions>
